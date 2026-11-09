@@ -10,17 +10,30 @@ export const Challenges: CollectionConfig = {
     },
     {
       name: 'Description',
-      type: 'text',
+      type: 'textarea',
       required: true,
     },
     {
       name: 'location',
-      type: 'ui',
-      admin: {
-        components: {
-          Field: '/components/LocationPicker/LocationPicker',
+      type: 'group',
+      fields: [
+        {
+          type: 'row',
+          fields: [
+            { name: 'latitude', type: 'number', admin: { width: '50%' } },
+            { name: 'longitude', type: 'number', admin: { width: '50%' } },
+          ],
         },
-      },
+        {
+          name: 'picker',
+          type: 'ui',
+          admin: {
+            components: {
+              Field: '/components/LocationPicker/LocationPicker',
+            },
+          },
+        },
+      ],
     },
   ],
   access: {
