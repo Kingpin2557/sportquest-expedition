@@ -14,9 +14,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     limit: 1,
   })
 
-  console.log('Requested slug:', slug)
-  console.log('Matching pages:', result.docs.length)
-
   const page = result.docs[0]
 
   if (!page) notFound()
