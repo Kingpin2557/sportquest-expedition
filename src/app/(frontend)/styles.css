@@ -1,8 +1,15 @@
 :root {
+  --accent-color: hsl(85.26, 53.41%, 51.18%);
+  --extra-color: hsl(148.98, 100%, 28.82%);
+  --grey--color: hsl(90, 50%, 98.43%);
+  --dark-color: hsl(148.93, 100%, 10.98%);
+
   --font-mono: 'Roboto Mono', monospace;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -10,20 +17,23 @@ html {
   font-size: 18px;
   line-height: 32px;
 
-  background: rgb(0, 0, 0);
+  background: var(--grey--color);
+
   -webkit-font-smoothing: antialiased;
 }
 
 html,
 body,
 #app {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
   font-family: system-ui;
   font-size: 18px;
   line-height: 32px;
+
+  background-color: var(--grey--color);
 
   margin: 0;
   color: rgb(1000, 1000, 1000);

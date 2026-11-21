@@ -19,9 +19,5 @@ export default async function HomePage() {
     notFound()
   }
 
-  return (
-    <main>
-      <h1>{page.title}</h1>
-    </main>
-  )
+  return <h1>{page.title}</h1>
 }

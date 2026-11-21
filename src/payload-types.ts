@@ -156,11 +156,23 @@ export interface Page {
 export interface Challenge {
   id: number;
   Title: string;
-  Description: string;
-  location?: {
-    latitude?: number | null;
-    longitude?: number | null;
+  Description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
   };
+  latitude?: number | null;
+  longitude?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -287,12 +299,8 @@ export interface PagesSelect<T extends boolean = true> {
 export interface ChallengesSelect<T extends boolean = true> {
   Title?: T;
   Description?: T;
-  location?:
-    | T
-    | {
-        latitude?: T;
-        longitude?: T;
-      };
+  latitude?: T;
+  longitude?: T;
   updatedAt?: T;
   createdAt?: T;
 }
