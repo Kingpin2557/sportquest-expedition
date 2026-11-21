@@ -1,8 +1,10 @@
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import type { CollectionConfig } from 'payload'
 
 export const Challenges: CollectionConfig = {
   slug: 'challenges',
+  admin: {
+    useAsTitle: 'title',
+  },
   fields: [
     {
       type: 'tabs',
@@ -11,12 +13,14 @@ export const Challenges: CollectionConfig = {
           label: 'Information',
           fields: [
             {
-              name: 'Title',
+              label: 'Title',
+              name: 'title',
               type: 'text',
               required: true,
             },
             {
-              name: 'Description',
+              label: 'Description',
+              name: 'description',
               type: 'richText',
               required: true,
             },
@@ -48,5 +52,6 @@ export const Challenges: CollectionConfig = {
   ],
   access: {
     read: () => true,
+    update: () => true,
   },
 }

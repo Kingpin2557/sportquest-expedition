@@ -131,7 +131,7 @@ export interface Page {
    */
   generateSlug?: boolean | null;
   slug: string;
-  content?: {
+  Content?: {
     root: {
       type: string;
       children: {
@@ -155,8 +155,8 @@ export interface Page {
  */
 export interface Challenge {
   id: number;
-  Title: string;
-  Description: {
+  title: string;
+  description: {
     root: {
       type: string;
       children: {
@@ -288,7 +288,7 @@ export interface PagesSelect<T extends boolean = true> {
   title?: T;
   generateSlug?: T;
   slug?: T;
-  content?: T;
+  Content?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -297,8 +297,8 @@ export interface PagesSelect<T extends boolean = true> {
  * via the `definition` "challenges_select".
  */
 export interface ChallengesSelect<T extends boolean = true> {
-  Title?: T;
-  Description?: T;
+  title?: T;
+  description?: T;
   latitude?: T;
   longitude?: T;
   updatedAt?: T;
